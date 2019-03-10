@@ -37,7 +37,7 @@ It takes a lot of time to check each registry value is correct, I will get to th
 In the meantime ensure you read the raw XML results file generated as you will see blank results for some collections/groups/checks depending on the OS. Additionally, it is recommend each reported issue is verified to ensure accuracy.
 
 In Scope:
-* Windows 2012 R2
+* Windows 2012 R2 (works best)
 * Windows 2008 R2
 * Windows 2016
 * Windows 8.1
