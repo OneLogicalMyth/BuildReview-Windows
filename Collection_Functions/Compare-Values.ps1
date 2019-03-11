@@ -46,6 +46,17 @@ param($ObtainedValue=0,$Value=0,$Value2=0,$Comparison='eq')
 		}else{
 			'Fail'
 		}
+	}elseif($Comparison -like 'foreach-*'){
+		$Comparison = $Comparison.split('-')[1]
+		$Passed = 'Pass'
+		foreach($V in $Value)
+		{
+			if(-not (Invoke-Expression ('$ObtainedValue -' + $Comparison + ' $Value')))
+			{
+				return 'Fail'
+			}
+		}
+		$Passed
 	}else{
 		if((Invoke-Expression ('$ObtainedValue -' + $Comparison + ' $Value')))
 		{

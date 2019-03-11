@@ -122,11 +122,11 @@
 			<ExternalReference />
 		</Group>
 		<Group name="ServerProtocols" collection="Cryptography">
-			<Details>Navigate to registry path of HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\ and then set the following registry values:</Details>
+			<Details>The following configuration was observed:</Details>
 			<Title>Cryptographic Server Protocols Inadequate</Title>
 			<TableTitle>Cryptographic Server Protocols</TableTitle>
 			<Description>The defined server protocols are inadequate and should be hardened.</Description>
-			<LongRecommendation>Change the server protocols to conform to best practices.</LongRecommendation>
+			<LongRecommendation>Navigate to registry key of:&lt;br /&gt;&lt;code&gt;HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols&lt;/code&gt;&lt;br /&gt;Ensure the following registry values as detailed below are configured to best practice. All registry properties listed below are a DWORD type.</LongRecommendation>
 			<ShortRecommendation>Change the server protocols to conform to best practices</ShortRecommendation>
 			<ExternalReference />
 		</Group>
@@ -135,7 +135,7 @@
 			<Title>Cryptographic Ciphers Inadequate</Title>			
 			<TableTitle>Cryptographic Ciphers</TableTitle>
 			<Description>The defined cryptographic ciphers are inadequate and should be hardened.</Description>
-			<LongRecommendation>Change the cryptographic ciphers to conform to best practices.</LongRecommendation>
+			<LongRecommendation>Navigate to registry key of:&lt;br /&gt;&lt;code&gt;HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers&lt;/code&gt;&lt;br /&gt;Ensure the following registry values as detailed below are configured to best practice. All registry properties listed below are a DWORD type.</LongRecommendation>
 			<ShortRecommendation>Change the cryptographic ciphers to conform to best practices</ShortRecommendation>
 			<ExternalReference />
 		</Group>
@@ -144,7 +144,7 @@
 			<Title>Cryptographic Hashes Inadequate</Title>			
 			<TableTitle>Cryptographic Hashes</TableTitle>
 			<Description>The defined cryptographic hashes are inadequate and should be hardened.</Description>
-			<LongRecommendation>Change the cryptographic hashes to conform to best practices.</LongRecommendation>
+			<LongRecommendation>Navigate to registry key of:&lt;br /&gt;&lt;code&gt;HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes&lt;/code&gt;&lt;br /&gt;Ensure the following registry values as detailed below are configured to best practice. All registry properties listed below are a DWORD type.</LongRecommendation>
 			<ShortRecommendation>Change the cryptographic hashes to conform to best practices</ShortRecommendation>
 			<ExternalReference />
 		</Group>
@@ -153,7 +153,7 @@
 			<Title>Cryptographic Client Protocols Inadequate</Title>			
 			<TableTitle>Client Protocols</TableTitle>
 			<Description>The defined client protocols are inadequate and should be hardened.</Description>
-			<LongRecommendation>Change the client protocols to conform to best practices.</LongRecommendation>
+			<LongRecommendation>Navigate to registry key of:&lt;br /&gt;&lt;code&gt;HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols&lt;/code&gt;&lt;br /&gt;Ensure the following registry values as detailed below are configured to best practice. All registry properties listed below are a DWORD type.</LongRecommendation>
 			<ShortRecommendation>Change the client protocols to conform to best practices</ShortRecommendation>
 			<ExternalReference />
 		</Group>
@@ -163,51 +163,51 @@
 		<!-- if no raw value matches the below, the raw value is returned as is -->
 		<Check>
 			<CIDs>
-				<CID Description="Key: Protocols\Multi-Protocol Unified Hello\Server, Type: DWORD, Property: Enabled">87e89da6-68cb-445e-83df-52012e49e123</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\PCT 1.0\Server\Enabled">3c1a3d58-abc6-4717-83cc-1b17a8741d5d</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0\Server\Enabled">42525fae-0d21-45f7-8719-fbcdd3c54bdc</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\Server\Enabled">2159aed8-17e4-4c1d-b9ab-337374edfefd</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Server\Enabled">bb4839b8-0d69-4016-937d-30ef26cb0f5e</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Server\Enabled">59af4b5b-92df-418f-82e8-d4eb77b2bf80</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server\Enabled">defe513e-d05a-4aa7-973d-57e848b8b683</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\Multi-Protocol Unified Hello\Server\DisabledByDefault">f38889b0-75c0-4926-aaee-d8902e53fcb9</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\PCT 1.0\Server\DisabledByDefault">e0d2f97b-964e-4496-9cc9-11beb7d98d70</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0\Server\DisabledByDefault">c534d7d9-7763-4142-b79d-17a12ad2e854</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\Server\DisabledByDefault">7145b074-288d-4f5e-821b-e2074aa5eea6</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Server\DisabledByDefault">a3465d27-2a33-448e-adc0-169f6cf755f9</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Server\DisabledByDefault">d632bc25-58e1-41c4-8a1e-a0aad1a4adf3</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Server\DisabledByDefault">4d63be6a-9a3e-422f-988c-c404e6c63595</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\NULL\Enabled">9989f643-104c-450f-99ed-c8b0a8cb9cdd</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\DES 56/56\Enabled">cb0fe20b-c26c-4aef-b19c-b358df2cfaa3</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC2 40/128\Enabled">b365e900-737b-4e25-a1d8-6a4276751e4f</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC2 56/128\Enabled">589985a0-ed95-467c-b5bb-435ea1a08bcd</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC2 128/128\Enabled">cf1ae60d-a3a8-421e-875b-bc01b87272d3</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 40/128\Enabled">b72b160f-5a18-4078-867d-9f4c0813c443</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 56/128\Enabled">915f2efd-cb28-4957-af3c-af77e282f637</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 64/128\Enabled">d2de9bf8-d3fc-44f7-957c-c8e5ed7263fb</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\RC4 128/128\Enabled">1a07fba4-a26f-4a0c-ac14-d09381288856</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\Triple DES 168\Enabled">5807bdce-43d8-464a-b7b8-980fa88b77cb</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\AES 128/128\Enabled">8d7d8a95-364c-47ec-9b61-c6cd71cc2bb4</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Ciphers\AES 256/256\Enabled">0d238209-cd25-48c9-8ed6-1e79af1b678e</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\MD5\Enabled">fc87e638-86ee-40c6-874d-24793ef88ba8</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA\Enabled">4db9118a-300c-4101-a036-3a4ee5fb6ad2</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA256\Enabled">0b9152bc-ef40-492a-b133-845a47d924a5</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA384\Enabled">b4c26939-82b3-495b-92f9-b91d7936f61f</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Hashes\SHA512\Enabled">72e38cd1-91d5-444e-add0-a89af34da2ae</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\Multi-Protocol Unified Hello\Client\Enabled">6e5b1ecc-f425-447c-875f-a8bcfb82d38b</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\PCT 1.0\Client\Enabled">0bf4b215-58b8-4034-a30d-5662e8bcac73</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0\Client\Enabled">63e7e2c7-f52f-480a-8d77-1750d7bf2c98</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\Client\Enabled">e4dfb008-0676-4526-aca6-ccee4a45e039</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Client\Enabled">af2dc39b-6eab-4505-b748-146fbbf6933f</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Client\Enabled">a620cef7-908f-4207-9b40-1e49a4d25f24</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client\Enabled">2795d73e-b828-4c6a-9fb7-d3bb981fcdf0</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\Multi-Protocol Unified Hello\Client\DisabledByDefault">d56828be-a95e-4cf0-bd3e-d3b047efa05f</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\PCT 1.0\Client\DisabledByDefault">6dccfaf0-0ed8-4109-ae4b-fa7ce6608c7c</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 2.0\Client\DisabledByDefault">f5b96ef2-22da-48aa-9dca-31b243673715</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\SSL 3.0\Client\DisabledByDefault">989b78f9-d127-48e7-8750-5c190a9da8e2</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.0\Client\DisabledByDefault">708b402f-0b57-4d5f-acb0-fff08c7def9d</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.1\Client\DisabledByDefault">0f40178c-3ee8-4a83-8908-a557ae4e0dd8</CID>
-				<CID Description="HKLM\SYSTEM\CurrentControlSet\Control\SecurityProviders\SCHANNEL\Protocols\TLS 1.2\Client\DisabledByDefault">8e86dc7f-32ba-4619-a139-b558a7c12bfa</CID>
+				<CID Description="Key: Multi-Protocol Unified Hello\Server, Property: Enabled">87e89da6-68cb-445e-83df-52012e49e123</CID>
+				<CID Description="Key: PCT 1.0\Server, Property: Enabled">3c1a3d58-abc6-4717-83cc-1b17a8741d5d</CID>
+				<CID Description="Key: SSL 2.0\Server, Property: Enabled">42525fae-0d21-45f7-8719-fbcdd3c54bdc</CID>
+				<CID Description="Key: SSL 3.0\Server, Property: Enabled">2159aed8-17e4-4c1d-b9ab-337374edfefd</CID>
+				<CID Description="Key: TLS 1.0\Server, Property: Enabled">bb4839b8-0d69-4016-937d-30ef26cb0f5e</CID>
+				<CID Description="Key: TLS 1.1\Server, Property: Enabled">59af4b5b-92df-418f-82e8-d4eb77b2bf80</CID>
+				<CID Description="Key: TLS 1.2\Server, Property: Enabled">defe513e-d05a-4aa7-973d-57e848b8b683</CID>
+				<CID Description="Key: Multi-Protocol Unified Hello\Server, Property: DisabledByDefault">f38889b0-75c0-4926-aaee-d8902e53fcb9</CID>
+				<CID Description="Key: PCT 1.0\Server, Property: DisabledByDefault">e0d2f97b-964e-4496-9cc9-11beb7d98d70</CID>
+				<CID Description="Key: SSL 2.0\Server, Property: DisabledByDefault">c534d7d9-7763-4142-b79d-17a12ad2e854</CID>
+				<CID Description="Key: SSL 3.0\Server, Property: DisabledByDefault">7145b074-288d-4f5e-821b-e2074aa5eea6</CID>
+				<CID Description="Key: TLS 1.0\Server, Property: DisabledByDefault">a3465d27-2a33-448e-adc0-169f6cf755f9</CID>
+				<CID Description="Key: TLS 1.1\Server, Property: DisabledByDefault">d632bc25-58e1-41c4-8a1e-a0aad1a4adf3</CID>
+				<CID Description="Key: TLS 1.2\Server, Property: DisabledByDefault">4d63be6a-9a3e-422f-988c-c404e6c63595</CID>
+				<CID Description="Key: NULL, Property: Enabled">9989f643-104c-450f-99ed-c8b0a8cb9cdd</CID>
+				<CID Description="Key: DES 56/56, Property: Enabled">cb0fe20b-c26c-4aef-b19c-b358df2cfaa3</CID>
+				<CID Description="Key: RC2 40/128, Property: Enabled">b365e900-737b-4e25-a1d8-6a4276751e4f</CID>
+				<CID Description="Key: RC2 56/128, Property: Enabled">589985a0-ed95-467c-b5bb-435ea1a08bcd</CID>
+				<CID Description="Key: RC2 128/128, Property: Enabled">cf1ae60d-a3a8-421e-875b-bc01b87272d3</CID>
+				<CID Description="Key: RC4 40/128, Property: Enabled">b72b160f-5a18-4078-867d-9f4c0813c443</CID>
+				<CID Description="Key: RC4 56/128, Property: Enabled">915f2efd-cb28-4957-af3c-af77e282f637</CID>
+				<CID Description="Key: RC4 64/128, Property: Enabled">d2de9bf8-d3fc-44f7-957c-c8e5ed7263fb</CID>
+				<CID Description="Key: RC4 128/128, Property: Enabled">1a07fba4-a26f-4a0c-ac14-d09381288856</CID>
+				<CID Description="Key: Triple DES 168, Property: Enabled">5807bdce-43d8-464a-b7b8-980fa88b77cb</CID>
+				<CID Description="Key: AES 128/128, Property: Enabled">8d7d8a95-364c-47ec-9b61-c6cd71cc2bb4</CID>
+				<CID Description="Key: AES 256/256, Property: Enabled">0d238209-cd25-48c9-8ed6-1e79af1b678e</CID>
+				<CID Description="Key: MD5, Property: Enabled">fc87e638-86ee-40c6-874d-24793ef88ba8</CID>
+				<CID Description="Key: SHA, Property: Enabled">4db9118a-300c-4101-a036-3a4ee5fb6ad2</CID>
+				<CID Description="Key: SHA256, Property: Enabled">0b9152bc-ef40-492a-b133-845a47d924a5</CID>
+				<CID Description="Key: SHA384, Property: Enabled">b4c26939-82b3-495b-92f9-b91d7936f61f</CID>
+				<CID Description="Key: SHA512, Property: Enabled">72e38cd1-91d5-444e-add0-a89af34da2ae</CID>
+				<CID Description="Key: Multi-Protocol Unified Hello\Client, Property: Enabled">6e5b1ecc-f425-447c-875f-a8bcfb82d38b</CID>
+				<CID Description="Key: PCT 1.0\Client, Property: Enabled">0bf4b215-58b8-4034-a30d-5662e8bcac73</CID>
+				<CID Description="Key: SSL 2.0\Client, Property: Enabled">63e7e2c7-f52f-480a-8d77-1750d7bf2c98</CID>
+				<CID Description="Key: SSL 3.0\Client, Property: Enabled">e4dfb008-0676-4526-aca6-ccee4a45e039</CID>
+				<CID Description="Key: TLS 1.0\Client, Property: Enabled">af2dc39b-6eab-4505-b748-146fbbf6933f</CID>
+				<CID Description="Key: TLS 1.1\Client, Property: Enabled">a620cef7-908f-4207-9b40-1e49a4d25f24</CID>
+				<CID Description="Key: TLS 1.2\Client, Property: Enabled">2795d73e-b828-4c6a-9fb7-d3bb981fcdf0</CID>
+				<CID Description="Key: Multi-Protocol Unified Hello\Client, Property: DisabledByDefault">d56828be-a95e-4cf0-bd3e-d3b047efa05f</CID>
+				<CID Description="Key: PCT 1.0\Client, Property: DisabledByDefault">6dccfaf0-0ed8-4109-ae4b-fa7ce6608c7c</CID>
+				<CID Description="Key: SSL 2.0\Client, Property: DisabledByDefault">f5b96ef2-22da-48aa-9dca-31b243673715</CID>
+				<CID Description="Key: SSL 3.0\Client, Property: DisabledByDefault">989b78f9-d127-48e7-8750-5c190a9da8e2</CID>
+				<CID Description="Key: TLS 1.0\Client, Property: DisabledByDefault">708b402f-0b57-4d5f-acb0-fff08c7def9d</CID>
+				<CID Description="Key: TLS 1.1\Client, Property: DisabledByDefault">0f40178c-3ee8-4a83-8908-a557ae4e0dd8</CID>
+				<CID Description="Key: TLS 1.2\Client, Property: DisabledByDefault">8e86dc7f-32ba-4619-a139-b558a7c12bfa</CID>
 			</CIDs>
 			<Value raw="n/a" translated="n/a" />
 		</Check>

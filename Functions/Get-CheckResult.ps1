@@ -86,6 +86,19 @@ param($ResultXML,$CheckResult,$Definition)
 				$ValueItemObtained = $CheckResult.ObtainedValue
 				$ValueItemRequired = "Between $CheckDataValue and $($CheckData.Value2) inclusive"
 			}
+			'ne'
+			{
+				$ValueItemObtained = $ValueItem.ParentNode.ParentNode.Value | Where-Object { $_.raw -eq $CheckResult.ObtainedValue } | Select-Object -ExpandProperty translated
+				$ValueItemRequired = $ValueItem.ParentNode.ParentNode.Value | Where-Object { $_.raw -eq $CheckDataValue } | Select-Object -ExpandProperty translated
+				if((Test-IsNull $ValueItemObtained)){
+					$ValueItemObtained = $CheckResult.ObtainedValue
+				}
+				if((Test-IsNull $ValueItemRequired))
+				{
+					$ValueItemRequired = $CheckDataValue
+				}
+				$ValueItemRequired = 'Not equal ' + $ValueItemRequired
+			}
 
 			default
 			{
